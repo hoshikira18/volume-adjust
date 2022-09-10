@@ -16,6 +16,10 @@ function logTabs(tabs) {
     let btnText = document.createTextNode('Save')
     input.className = `input-volume-${i}`
     input.classList.add('input-volume')
+    input.type = 'range'
+    input.min = '0'
+    input.max = '100'
+    input.value = '00'
     btn.className = 'save-volume-btn'
     div.className = 'tab'
     subDiv.className = 'sub-div'
