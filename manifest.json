@@ -1,0 +1,29 @@
+{
+  "name": "Volume Change",
+  "description": "Extension to adjust the volume of each chrome tabs.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "options_page": "tab.html",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ]
+}
+
