@@ -49,7 +49,7 @@ function adjustVolume(listtabs) {
       chrome.tabs.sendMessage(
         listtabs[i].id,
         {
-          message: "hello",
+          message: "adjust-volume",
           volume: volume
         })
     }

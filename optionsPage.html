@@ -1,37 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head><title>Volume Change</title>
-  <style>
-    * {
-      margin: 0;
-    }
-
-    .tab {
-      width: auto;
-      height: 30px;
-      line-height: 30px;
-      background-color: antiquewhite;
-      margin-top: 10px;
-      padding-left: 20px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .title {
-      height: 30px;
-      width: 300px;
-      overflow: hidden; /* text-overflow: clip; */
-    }
-
-    .input-volume {
-      width: 200px;
-      margin-right: 20px;
-    }
-  </style>
-
+  <link rel="stylesheet" href="optionsPage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-<div class="tabs"></div>
+
+<div class="app">
+  <div class="content">
+    <div class="heading"><h1 class="text">VMaster</h1></div>
+    <div class="tabs"></div>
+  </div>
+</div>
+
 <script src="options.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ chrome.action.onClicked.addListener(() => {
 
 function buttonClicked(tab) {
   let msg = {
-    txt: "hello"
+    txt: "adjust-volume"
   }
   chrome.tabs.sendMessage(tab.id, msg)
 }
