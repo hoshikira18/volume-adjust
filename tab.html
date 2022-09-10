@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head><title>Volume Change</title></head>
-<body>
-<button class="btn">Send Message</button>
+<head><title>Volume Change</title>
+  <style>
+    * {
+      margin: 0;
+    }
 
+    .tab {
+      width: 50%;
+      height: 30px;
+      line-height: 30px;
+      background-color: antiquewhite;
+      margin-top: 10px;
+      padding-left: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .title {
+      height: 30px;
+      width: 300px;
+      overflow: hidden; /* text-overflow: clip; */
+    }
+
+    .input-volume {
+      width: 20px;
+      margin-right: 20px;
+    }
+  </style>
+
+</head>
+<body>
+<div class="tabs"></div>
 <script src="options.js"></script>
 </body>
 </html>
