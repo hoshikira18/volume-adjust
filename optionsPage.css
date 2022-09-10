@@ -62,13 +62,44 @@
 }
 
 .tab {
+  position: relative;
   background: #f3f3f3;
-  padding: 10px;
+  padding: 15px;
   width: 800px;
   margin-top: 10px;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-
+  display: flex;
+  align-items: center;
 }
+
+.sub-div {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab input {
+  width: 150px;
+  margin-right: 10px;
+  background: red;
+}
+
+.tab .save-volume-btn {
+  height: 20px;
+  display: block;
+  color: #000;
+  cursor: pointer;
+}
+
+.title-icon {
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+}
+
+
 

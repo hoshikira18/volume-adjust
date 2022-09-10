@@ -10,10 +10,14 @@ function logTabs(tabs) {
     let div = document.createElement('div')
     let subDiv = document.createElement('div')
     let input = document.createElement('input')
-    let btn = document.createElement('button')
+    let btn = document.createElement('div')
     let p = document.createElement('p')
     let tabTitle = document.createTextNode(`${tabs[i].title}`)
-    let btnText = document.createTextNode('Save')
+    let btnIcon = document.createElement('i')
+    let titleIcon = document.createElement('img')
+    titleIcon.src = tabs[i].favIconUrl
+    titleIcon.className = 'title-icon'
+    btnIcon.className = 'fa-solid fa-floppy-disk icon'
     input.className = `input-volume-${i}`
     input.classList.add('input-volume')
     input.type = 'range'
@@ -24,10 +28,11 @@ function logTabs(tabs) {
     div.className = 'tab'
     subDiv.className = 'sub-div'
     p.className = 'title'
-    btn.appendChild(btnText)
+    btn.innerHTML = `save`
     subDiv.appendChild(input)
     subDiv.appendChild(btn)
     p.appendChild(tabTitle)
+    div.appendChild(titleIcon)
     div.appendChild(p)
     div.appendChild(subDiv)
     listtabs.appendChild(div)
@@ -45,7 +50,7 @@ function adjustVolume(listtabs) {
   for (let i = 0; i < btnSaveVolume.length; i++) {
     btnSaveVolume[i].onclick = () => {
       let volume = inputVolume[i].value
-      console.log(listtabs[i].id)
+      console.log(listtabs)
       chrome.tabs.sendMessage(
         listtabs[i].id,
         {
@@ -55,7 +60,6 @@ function adjustVolume(listtabs) {
     }
   }
 }
-
 
 chrome.tabs.query({active: false}).then(app, onError);
 
