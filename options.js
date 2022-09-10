@@ -44,7 +44,7 @@ function adjustVolume(listtabs) {
   let inputVolume = document.querySelectorAll('.input-volume')
   for (let i = 0; i < btnSaveVolume.length; i++) {
     btnSaveVolume[i].onclick = () => {
-      let volume = parseFloat(inputVolume[i].value) / 100
+      let volume = inputVolume[i].value
       console.log(listtabs[i].id)
       chrome.tabs.sendMessage(
         listtabs[i].id,
