@@ -23,7 +23,7 @@ function logTabs(tabs) {
     input.type = 'range'
     input.min = '0'
     input.max = '100'
-    input.value = '00'
+    input.value = '80'
     btn.className = 'save-volume-btn'
     div.className = 'tab'
     subDiv.className = 'sub-div'

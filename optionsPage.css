@@ -66,12 +66,20 @@
   background: #f3f3f3;
   padding: 15px;
   width: 800px;
+  height: 70px;
   margin-top: 10px;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+.tab .title {
+  width: 100px;
+  height: 18px;
+  overflow: hidden;
 }
 
 .sub-div {
@@ -83,12 +91,13 @@
 }
 
 .tab input {
-  width: 150px;
-  margin-right: 10px;
+  width: 500px;
+  margin-right: 40px;
   background: red;
 }
 
 .tab .save-volume-btn {
+  margin-right: 20px;
   height: 20px;
   display: block;
   color: #000;
