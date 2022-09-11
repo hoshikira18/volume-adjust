@@ -23,16 +23,16 @@
   height: 300px;
   border-radius: 50%;
   background: linear-gradient(#fc6900, #e19e63);
-  transform: translate(-200px, -350px);
+  transform: translate(400px, -350px);
 }
 
 .app::after {
   content: '';
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: #eeab2e;
-  transform: translate(200px, 350px);
+  transform: translate(-600px, 350px);
 }
 
 .content {
