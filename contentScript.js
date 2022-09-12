@@ -10,14 +10,3 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
   }
 })
-
-function app() {
-  
-}
-
-
-chrome.tabs.query({active: false}).then(app, onError);
-
-function gotMessage(message, sender, sendResponse) {
-  console.log(message.message)
-}

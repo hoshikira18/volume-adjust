@@ -64,7 +64,6 @@ function onError(error) {
 function adjustVolume(listtabs, inputs) {
   for (let i = 0; i < inputs.length; i++) {
     let volume = inputs[i].value
-    console.log(listtabs)
     chrome.tabs.sendMessage(listtabs[i].id, {
       message: "adjust-volume", volume: volume
     })
@@ -83,6 +82,10 @@ function initiaizeInput(listtabs) {
       thumb[i].style.left = this.value + "%"
       volumeValue[i].innerHTML = this.value
       progressBar[i].style.width = this.value + "%"
+      let volume = this.value
+      chrome.storage.sync.set({key: volume}, function () {
+        console.log('Value is set to ' + volume);
+      });
       adjustVolume(listtabs, slider)
     }
   }
