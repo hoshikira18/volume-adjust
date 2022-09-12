@@ -22,10 +22,8 @@ function logTabs(tabs) {
     subDiv.className = 'sub-div'
     p.className = 'title'
     btn.innerHTML = `save`
-    // < div
-    // className = "slider-container" >
-    //   < div
-    // className = "progress-bar" > < /div>
+    // <div className = "slider-container" >
+    //   <div className = "progress-bar" > < /div>
     // <input className="slider" type="range" min="0" max="100" value="50">
     //   <div className="thumb">
     //     <div className="thumbBtn"></div>
