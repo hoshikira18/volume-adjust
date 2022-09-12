@@ -1,3 +1,4 @@
+// get message
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.message === "adjust-volume") {
     let videoElements = document.querySelectorAll('video')
