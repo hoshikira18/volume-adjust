@@ -95,7 +95,7 @@ function initializeAndHandleInputAudio(listtabs) {
       chrome.storage.sync.set({key: volume}, function () {
         console.log('Value is set to ' + volume);
       });
-      // handle volume
+      // handle volume blabla
       adjustVolume(listtabs, slider)
     }
   }
