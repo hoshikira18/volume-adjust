@@ -3,7 +3,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     let videoElements = document.querySelectorAll('video')
     let audioElements = document.querySelectorAll('audio')
     let mediaElements = [...audioElements, ...videoElements]
-    console.log(mediaElements)
     for (let i = 0; i < mediaElements.length; i++) {
       let volume = parseFloat(message.volume) / 100
       mediaElements[i].volume = volume
@@ -12,6 +11,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 })
 
+function app() {
+  
+}
+
+
+chrome.tabs.query({active: false}).then(app, onError);
 
 function gotMessage(message, sender, sendResponse) {
   console.log(message.message)

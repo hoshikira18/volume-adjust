@@ -9,19 +9,14 @@ function logTabs(tabs) {
   for (let i = 0; i < tabs.length; i++) {
     let div = document.createElement('div')
     let subDiv = document.createElement('div')
-    let btn = document.createElement('div')
     let p = document.createElement('p')
     let tabTitle = document.createTextNode(`${tabs[i].title}`)
-    let btnIcon = document.createElement('i')
     let titleIcon = document.createElement('img')
     titleIcon.src = tabs[i].favIconUrl
     titleIcon.className = 'title-icon'
-    btnIcon.className = 'fa-solid fa-floppy-disk icon'
-    btn.className = 'save-volume-btn'
     div.className = 'tab'
     subDiv.className = 'sub-div'
     p.className = 'title'
-    btn.innerHTML = `save`
     // <div className = "slider-container" >
     //   <div className = "progress-bar" > < /div>
     // <input className="slider" type="range" min="0" max="100" value="50">
@@ -53,7 +48,6 @@ function logTabs(tabs) {
     sliderContainer.appendChild(thumb)
     // INPUT SLIDER
     subDiv.appendChild(sliderContainer)
-    subDiv.appendChild(btn)
     p.appendChild(tabTitle)
     div.appendChild(titleIcon)
     div.appendChild(p)
