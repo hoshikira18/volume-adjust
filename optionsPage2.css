@@ -29,6 +29,7 @@
 
 .heading {
   color: #fff;
+  margin-left: 20px;
 }
 
 .heading span {
@@ -68,7 +69,7 @@
 
 .sub-div {
   position: absolute;
-  right: 10px;
+  right: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +101,7 @@
 .slider-container {
   width: 500px;
   position: relative;
+  left: -50px;
 }
 
 
@@ -180,3 +182,9 @@
   left: 0;
 }
 
+
+.save-volume-btn {
+  color: #fff;
+  margin-left: -20px;
+  cursor: pointer;
+}
