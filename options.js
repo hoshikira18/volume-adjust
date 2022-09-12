@@ -2,7 +2,7 @@ let listtabs = document.querySelector('.tabs')
 
 function app(tabs) {
   logTabs(tabs)
-  initiaizeInput()
+  initiaizeInput(tabs)
 }
 
 function logTabs(tabs) {
@@ -59,42 +59,37 @@ function logTabs(tabs) {
     div.appendChild(p)
     div.appendChild(subDiv)
     listtabs.appendChild(div)
-    // initiaizeInput()
-
   }
-  adjustVolume(tabs)
-
 }
 
 function onError(error) {
   console.error(`Error: ${error}`);
 }
 
-function adjustVolume(listtabs) {
-  let btnSaveVolume = document.querySelectorAll('.save-volume-btn')
-  let inputVolume = document.querySelectorAll('.slider')
-  for (let i = 0; i < btnSaveVolume.length; i++) {
-    btnSaveVolume[i].onclick = () => {
-      let volume = inputVolume[i].value
-      console.log(listtabs)
-      chrome.tabs.sendMessage(listtabs[i].id, {
-        message: "adjust-volume", volume: volume
-      })
-    }
+
+function adjustVolume(listtabs, inputs) {
+  for (let i = 0; i < inputs.length; i++) {
+    let volume = inputs[i].value
+    console.log(listtabs)
+    chrome.tabs.sendMessage(listtabs[i].id, {
+      message: "adjust-volume", volume: volume
+    })
   }
 }
 
-function initiaizeInput() {
+function initiaizeInput(listtabs) {
   let slider = document.querySelectorAll('.slider')
   let thumb = document.querySelectorAll('.thumb')
   let volumeValue = document.querySelectorAll('.volume-value')
   let progressBar = document.querySelectorAll('.progress-bar')
+
   for (let i = 0; i < slider.length; i++) {
     volumeValue[i].innerHTML = slider[i].value
     slider[i].oninput = function () {
       thumb[i].style.left = this.value + "%"
       volumeValue[i].innerHTML = this.value
       progressBar[i].style.width = this.value + "%"
+      adjustVolume(listtabs, slider)
     }
   }
 }
