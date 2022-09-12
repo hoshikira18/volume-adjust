@@ -37,8 +37,8 @@
 
 .content {
   position: fixed;
-  min-height: 750px;
-  min-width: 1300px;
+  min-height: 80%;
+  min-width: 70%;
   background: rgba(255, 255, 255, 0.3);
   border: 4px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
@@ -51,6 +51,7 @@
   position: relative;
   margin: 40px 200px;
   font-size: 20px;
+  color: green;
 }
 
 .tabs {
@@ -111,4 +112,38 @@
 }
 
 
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+}
 
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  border-radius: 50%;
+  border: 4px solid #696969;
+  margin-top: -5px; /* alignment fix for Chrome */
+  background: #41a1fd;
+  cursor: pointer; /* Cursor on hover */
+  transition: 0.15s;
+
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border: 2px solid #696969;
+}
+
+.slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  height: 5px;
+  border-radius: 2px;
+  background: #58abfa;
+}
+
+.slider::-ms-thumb {
+  margin: 0; /* Reset margin in Edge since it supports -webkit-slider-thumb as well */
+}

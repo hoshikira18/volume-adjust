@@ -18,8 +18,8 @@ function logTabs(tabs) {
     titleIcon.src = tabs[i].favIconUrl
     titleIcon.className = 'title-icon'
     btnIcon.className = 'fa-solid fa-floppy-disk icon'
-    input.className = `input-volume-${i}`
-    input.classList.add('input-volume')
+    input.className = `input-volume`
+    input.classList.add('slider')
     input.type = 'range'
     input.min = '0'
     input.max = '100'
