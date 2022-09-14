@@ -1,3 +1,5 @@
+let listtabs = document.querySelector('.tabs')
+
 // main extension
 function app(tabs) {
   logTabs(tabs) // => print tabs into screen
@@ -5,7 +7,6 @@ function app(tabs) {
 }
 
 function logTabs(tabs) {
-  let listtabs = document.querySelector('.tabs')
 
   // Loop over tabs to create HTML element
   for (let i = 0; i < tabs.length; i++) {
@@ -81,7 +82,8 @@ function initializeAndHandleInputAudio(listtabs) {
   let volumeValue = document.querySelectorAll('.volume-value')
   let progressBar = document.querySelectorAll('.progress-bar')
 // Loop over tabs elements
-  for (let i = 0; i < slider.length; i++) {
+  let sliderLength = slider.length
+  for (let i = 0; i < sliderLength; i++) {
     // initialize volume Value on thumb
     volumeValue[i].innerHTML = slider[i].value
     // event when input slider is changed
@@ -90,11 +92,12 @@ function initializeAndHandleInputAudio(listtabs) {
       thumb[i].style.left = this.value + "%"
       volumeValue[i].innerHTML = this.value
       progressBar[i].style.width = this.value + "%"
-      let volume = this.value
-      // store volume, if tab is reloaded =>  get value and reset
-      chrome.storage.sync.set({key: volume}, function () {
-        console.log('Value is set to ' + volume);
-      });
+
+      // // store volume, if tab is reloaded =>  get value and reset
+      // chrome.storage.sync.set({key: volume}, function () {
+      //   console.log('Value is set to ' + volume);
+      // });
+
       // handle volume blabla
       adjustVolume(listtabs, slider)
     }
@@ -103,11 +106,9 @@ function initializeAndHandleInputAudio(listtabs) {
 
 function adjustVolume(listtabs, inputs) {
   for (let i = 0; i < inputs.length; i++) {
-    //get volume value from input slider
     let volume = inputs[i].value
-    // send message to content script to change volume
     chrome.tabs.sendMessage(listtabs[i].id, {
-      message: "adjust-volume", volume: volume
+      message: "adjust_volume", volume: volume
     })
   }
 }

@@ -111,6 +111,7 @@
   border-radius: 3px;
   outline: none;
   -webkit-appearance: none;
+  z-index: 5;
 }
 
 .slider::-webkit-slider-thumb {
@@ -180,6 +181,7 @@
   position: absolute;
   top: 6.6px;
   left: 0;
+  z-index: 0;
 }
 
 
