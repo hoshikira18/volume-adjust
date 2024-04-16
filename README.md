@@ -1,4 +1,4 @@
-#Volume adjust
+# Volume adjust
 
 Volume adjust is one of my first Chrome extension when I decide to join in this filed. It provide ability to turn up and down volume in each Chrome tab, create the convenience in audio management.
 
